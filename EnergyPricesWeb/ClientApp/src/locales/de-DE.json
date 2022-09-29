@@ -1,0 +1,13 @@
+{
+  "message": {
+    "language": "Ekku",
+    "greeting": "en"
+  },
+  "subtitle": "Electricity future prices",
+  "updated": "updated",
+  "top-description": "Service aggregates electricity future price information from Nasdaq OMX into more human readable format. Prices vary from day to day based on risk and multiple other factors. Set your local tax rate to get more accurate estimation.",
+  "estimate": {
+    "first": "markets estimated the price to be",
+    "second": "and"
+  }
+}

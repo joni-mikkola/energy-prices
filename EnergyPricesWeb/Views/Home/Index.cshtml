@@ -1,0 +1,51 @@
+﻿@model DataModel
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment hostingEnv
+@inject IConfiguration configuration
+@using EnergyPricesWeb.Models
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    bool development = hostingEnv.IsDevelopment();
+    var defaultCulture = "en-US";
+    var culture = Thread.CurrentThread.CurrentCulture.ToString();
+
+    if(culture != "de-DE" && culture != "en-US" && culture != "fi-FI") {
+        culture = defaultCulture;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>@Localizer["meta-title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="@Localizer["meta-description"]" />\
+    <meta name="keywords" content="@Localizer["meta-keywords"]">
+    <meta property="og:title" content="@Localizer["meta-title"]" />
+    <meta property="og:description" content="@Localizer["meta-description"]" />
+    <meta property="og:type" content="@Localizer["meta-type"]" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8167100852967357"
+            crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JWDYDWXHH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0JWDYDWXHH');
+    </script>
+    <title>Energy price futures</title>
+@if(!development) {
+        <script type="module" crossorigin src="/assets/index.js"></script>
+        <link rel="stylesheet" href="/assets/index.css">
+}
+</head>
+<body>
+    <div data-date="@Model.utcDate.ToString("yyyy/MM/dd")" data-baseUrl="@configuration["BaseUrl"]" data-culture="@culture" id="app"></div>
+@if(development) {
+    <script type="module" src="/src/main.ts"></script>
+}
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "message": {
+    "language": "Suomi",
+    "greeting": "fi"
+  },
+  "subtitle": "Sähköfutuurien hinnat",
+  "updated": "päivitetty",
+  "top-description": "Palvelu koostaa sähköfutuurien hintatiedot Nasdaq OMX -sivustolta selkeämpään muotoon. Hinnat vaihtelevat päivä päivältä muun muassa markkinoiden riskitekijöiden perusteella. Aseta oikealta veroprosentti saadaksesi tarkemmat hinta-arviot.",
+  "estimate": {
+    "first": "markkinat arvioivat hinnan olevan",
+    "second": "ja"
+  }
+}
